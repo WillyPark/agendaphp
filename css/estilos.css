@@ -1,0 +1,296 @@
+:root{
+    --primario: #c2185b;
+    --primarioOscuro: rgb(156, 10, 69);
+    --secundario: #ffc107;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --correcto: rgb(179, 241, 117);
+    --verde: rgb(0, 128, 0);
+    --error: rgb(238, 148, 166);
+    --rojoClaro: rgb(163, 0, 33);
+    --fuentePrimaria: 'Arial', Helvetica, sans-serif;
+    --fuenteSecundaria: 'Poppins', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    min-height: 100%; /* Para el Footer */
+    position: relative; /* Para el Footer */
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: var(--primario);
+    font-family: var(--fuentePrimaria);
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.bg-amarillo{
+    background-color: var(--secundario);
+}
+
+.bg-blanco{
+    background-color: var(--blanco);
+}
+
+.barra{
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    align-items: center;
+}
+
+/* Botones */
+
+.btn{
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-editar{
+    color: var(--secundario);
+}
+
+.btn-borrar{
+    color: var(--primario);
+}
+
+.volver{
+    background-color: var(--secundario);
+    border-radius: 5px;
+    text-align: center;
+    color: var(--negro);
+    font-weight: 700;
+    font-size: 2rem;
+    padding: .8rem;
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    border-radius: 1rem;
+}
+
+h1,h2{
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0;
+}
+
+h1{
+    padding: 2rem;
+    color: var(--blanco);
+}
+
+h2{
+    font-size: 3.2rem;
+    color: var(--primario);
+}
+
+.contenedor-barra{
+    background-color: var(--primarioOscuro);
+}
+
+/* Formulario */
+
+form{
+    padding: 3rem;
+    margin-top: 3rem;
+}
+
+form legend{
+    font-family: var(--fuenteSecundaria);
+    font-size: 3.4rem;
+    text-align: center;
+    display: inline-block;
+}
+
+legend span{
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    clear: both; /*salto de linea */
+    display: block;
+}
+
+.campo{
+    padding: .5rem 0;
+}
+
+@media(min-width: 768px){
+    .campos{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .campo{
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.campo label{
+    font-size: 2rem;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"]{
+    width: 100%;
+    border: none;
+    padding: 1rem .8rem;
+    margin-top: .5rem;
+    font-size: 1.8rem;
+}
+
+.enviar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.enviar input[type="submit"]{
+    background-color: var(--primario);
+    border: none;
+    color: var(--blanco);
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    transition: background-color .5s ease-in-out;
+    flex: 1;
+    margin-top: 1rem;
+}
+
+@media(min-width: 768px){
+    .enviar input[type="submit"]{
+        flex: 0 0 auto;
+        margin-top: 0;
+    }
+}
+
+.enviar input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: var(--primarioOscuro);
+}
+
+/* Listado de Contactos */
+
+.contactos{
+    padding: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 8.8rem; /* Para el Footer */
+}
+
+.contenedor-contactos{
+    max-width: 80rem;
+    margin: 3rem auto 0 auto;
+}
+
+.total-contactos{
+    font-family: var(--fuenteSecundaria);
+    margin: 3rem 0;
+    text-align: center;
+    color: var(--primario);
+    font-size: 3rem;
+}
+
+.total-contactos span{
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.buscador{
+    width: 100%;
+    height: 5rem;
+    padding: 1.5rem;
+    border: 1px solid #e1e1e1;
+    margin: 3rem 0;
+}
+
+.contenedor-tabla{
+    overflow: auto;
+}
+
+.listado-contactos{
+    width: 45rem;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+}
+
+@media(min-width: 768px){
+    .listado-contactos{
+        width: 100%;
+    }
+}
+
+.listado-contactos thead{
+    background-color: var(--primario);
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+
+.listado-contactos thead th{
+    padding: 1.5rem 0;
+}
+
+.listado-contactos tbody td{
+    padding: .8rem;
+    text-align: center;
+}
+
+.listado-contactos button{
+    background-color: transparent;
+    border: none;
+}
+
+/* Footer */
+
+.footer{
+    position: absolute; /* Para el Footer */
+    bottom: 0; /* Para el Footer*/
+    width: 100%; /* Para el Footer*/
+}
+
+.footer p{
+    margin: 0;
+    padding: 2rem 0;
+    color: var(--blanco);
+    text-align: center;
+    font-family: var(--fuenteSecundaria);
+}
+
+/* Notificaciones */
+.notificacion{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1.6rem 4rem;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.visible{
+    opacity: 1;
+}
+
+/* Colores de la notificación */
+
+.correcto{
+    background-color: var(--correcto);
+    color: var(--verde);
+}
+
+.error{
+    background-color: var(--error);
+    color: var(--rojoClaro);
+}
